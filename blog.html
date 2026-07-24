@@ -1,90 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light">
-  <title>Writing — Misfer Almaymouni</title>
-  <meta name="description" content="Writing on strategy, governance, and institutional transformation.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<div id="app">
-
-  <nav>
-    <div class="container">
-      <div class="nav-inner">
-        <a href="/" class="nav-brand">Misfer Almaymouni</a>
-        <ul class="nav-links">
-          <li><a href="/">Resume</a></li>
-          <li><a href="/blog.html" class="active">Writing</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <div class="container">
-
-      <header class="blog-header">
-        <h1>Writing</h1>
-        <p>On strategy, governance, and institutional transformation.</p>
-      </header>
-
-      <ul class="post-list">
-        <li v-for="post in posts" :key="post.slug" class="post-item">
-          <div class="post-item-row">
-            <a :href="post.url" class="post-title">{{ post.title }}</a>
-            <span class="post-date">{{ post.date }}</span>
-          </div>
-          <p class="post-excerpt">{{ post.excerpt }}</p>
-        </li>
-      </ul>
-
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span>&copy; 2026 Misfer Almaymouni</span>
-        <div class="footer-links">
-          <a href="mailto:me@misfer.info">me@misfer.info</a>
-          <a href="/">Resume</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-</div>
-
-<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-<script>
-  const { createApp } = Vue
-  createApp({
-    data() {
-      return {
-        posts: [
-          {
-            slug: 'governance-as-a-competitive-edge',
-            title: 'Governance as a Competitive Edge',
-            date: 'May 2026',
-            url: '/blog/governance-as-a-competitive-edge.html',
-            excerpt: 'Most organizations treat governance as a compliance cost. At AQALAT, we learned it can be a genuine source of strategic advantage — if you build it right.'
-          },
-          {
-            slug: 'what-pmo-work-taught-me-about-strategy',
-            title: 'What PMO Work Taught Me About Enterprise Strategy',
-            date: 'April 2026',
-            url: '/blog/what-pmo-work-taught-me-about-strategy.html',
-            excerpt: 'Fifteen years of building project management offices across healthcare, dairy, and real estate taught me that execution infrastructure is strategy — not a support function for it.'
-          }
-        ]
-      }
-    }
-  }).mount('#app')
-</script>
-</body>
-</html>
+---
+layout: default
+title: المقالات
+permalink: /blog/
+---
+<section class="listing">
+  <h1 class="section-label">المقالات</h1>
+  <ol class="entries">
+    {%- for post in site.posts %}
+    <li class="entry">
+      <time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%-d/%-m/%Y' }}</time>
+      <a class="entry-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {%- if post.excerpt %}<p class="entry-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>{% endif %}
+    </li>
+    {%- else %}
+    <li class="entry empty">لا توجد مقالات بعد.</li>
+    {%- endfor %}
+  </ol>
+</section>

@@ -1,0 +1,375 @@
+/* misfer.info — RTL Arabic personal blog */
+
+:root {
+  --paper: #fbfaf8;
+  --ink: #16161a;
+  --muted: #6e6e76;
+  --rule: #e4e1d9;
+  --verdigris: #1f5c58;
+
+  --display: "Amiri", Georgia, serif;
+  --body: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+
+  --measure: 34rem;
+  --step: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  font-feature-settings: "kern", "liga";
+  padding: 0 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.25em;
+}
+
+a:hover {
+  text-decoration-color: var(--verdigris);
+}
+
+:focus-visible {
+  outline: 2px solid var(--verdigris);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  inset-inline-start: -9999px;
+}
+
+.skip:focus {
+  inset-inline-start: 1rem;
+  top: 1rem;
+  background: var(--paper);
+  padding: 0.5rem 0.75rem;
+  z-index: 10;
+}
+
+/* ---------------------------------------------------------- masthead */
+
+.masthead,
+main,
+.colophon {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 3rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+.masthead nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------- home intro */
+
+.intro {
+  padding: 2rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.intro h1 {
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 7vw, 3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------- listings */
+
+.section-label {
+  font-family: var(--body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 2.5rem 0 0;
+  padding-bottom: 0.75rem;
+}
+
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry {
+  padding: var(--step) 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* The date sits in the margin as a quiet index, not a headline. */
+.entry-date {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.25rem;
+}
+
+.entry-title {
+  font-family: var(--display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.entry-title:hover {
+  color: var(--verdigris);
+}
+
+.entry-excerpt {
+  margin: 0.375rem 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.entry.empty {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.more {
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+}
+
+/* ---------------------------------------------------------- post */
+
+.post-head {
+  padding: 2rem 0 1.5rem;
+}
+
+.dateline {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.post-head h1 {
+  font-family: var(--display);
+  font-size: clamp(1.875rem, 6vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.terms {
+  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--verdigris);
+}
+
+.lede {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1rem 0 2rem;
+}
+
+/* ---------------------------------------------------------- prose */
+
+.prose {
+  padding-bottom: 3rem;
+}
+
+.prose > *:first-child {
+  margin-top: 0;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 1.5rem;
+}
+
+.prose h2,
+.prose h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-inline-start: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem 0;
+}
+
+.prose em {
+  color: var(--muted);
+}
+
+.prose blockquote {
+  margin: 2rem 0;
+  padding-inline-start: 1.25rem;
+  border-inline-start: 2px solid var(--verdigris);
+  font-family: var(--display);
+  font-size: 1.1875rem;
+  color: var(--ink);
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875em;
+  background: #f0eeea;
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  direction: ltr;
+  display: inline-block;
+}
+
+.prose pre {
+  direction: ltr;
+  text-align: left;
+  background: #f0eeea;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 3px;
+  line-height: 1.6;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9375rem;
+}
+
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.6rem 0.5rem;
+  text-align: start;
+}
+
+.narrow {
+  padding-top: 2rem;
+}
+
+.narrow h1 {
+  font-family: var(--display);
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
+}
+
+/* ---------------------------------------------------------- post nav */
+
+.post-nav {
+  max-width: var(--measure);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
+
+.post-nav a {
+  max-width: 45%;
+}
+
+/* ---------------------------------------------------------- footer */
+
+.colophon {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2.5rem 0 3rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.colophon p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,47 @@
+name: Sync from WordPress
+
+on:
+  schedule:
+    # Every hour at :17. GitHub delays scheduled runs under load — treat this
+    # as "within the hour", not "on the hour".
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wordpress-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Pull posts from WordPress
+        env:
+          WP_SITE: imisfer.wordpress.com
+          # Clear this to publish everything you post on WordPress.
+          WP_CATEGORY_GATE: ready
+        run: node scripts/sync-wp.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name  "wordpress-sync[bot]"
+          git config user.email "wordpress-sync[bot]@users.noreply.github.com"
+          git add -A _posts assets/img/posts
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Sync posts from WordPress"
+            git push
+          fi

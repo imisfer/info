@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-head">
+    <p class="dateline"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d/%-m/%Y' }}</time></p>
+    <h1>{{ page.title }}</h1>
+    {%- if page.categories.size > 0 %}
+    <p class="terms">{{ page.categories | join: ' · ' }}</p>
+    {%- endif %}
+  </header>
+
+  {%- if page.image %}
+  <img class="lede" src="{{ page.image | relative_url }}" alt="">
+  {%- endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
+
+<nav class="post-nav">
+  {%- if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>{% endif %}
+  {%- if page.next %}<a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>{% endif %}
+</nav>

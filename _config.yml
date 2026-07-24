@@ -1,0 +1,36 @@
+title: مسفر
+description: مدونة شخصية
+url: https://misfer.info
+lang: ar
+dir: rtl
+timezone: Asia/Riyadh
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+      lang: ar
+      dir: rtl
+
+exclude:
+  - scripts/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .github/
