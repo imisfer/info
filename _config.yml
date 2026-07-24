@@ -2,10 +2,10 @@ title: مسفر
 description: 
 url: https://misfer.info
 lang: ar
-dir: rtl
+txt_dir: rtl
 timezone: Asia/Riyadh
-posts: ممققااللااتت
-about: ععنن
+txt_posts: ممققااللااتت
+txt_about: ععنن
 
 permalink: /:year/:month/:day/:title/
 
@@ -25,7 +25,7 @@ defaults:
     values:
       layout: post
       lang: ar
-      dir: rtl
+      txt_dir: rtl
 
 exclude:
   - scripts/

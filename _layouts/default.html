@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang }}" dir="{{ page.dir | default: site.dir }}">
+<html lang="{{ page.lang | default: site.lang }}" dir="{{ page.txt_dir | default: site.txt_dir }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,8 @@
   <header class="masthead">
     <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav>
-      <a href="{{ '/blog/' | relative_url }}">{{ site.posts }}</a>
-      <a href="{{ '/about/' | relative_url }}">{{ site.about }}</a>
+      <a href="{{ '/blog/' | relative_url }}">{{ site.txt_posts }}</a>
+      <a href="{{ '/about/' | relative_url }}">{{ site.txt_about }}</a>
     </nav>
   </header>
 
