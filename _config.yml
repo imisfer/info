@@ -1,9 +1,11 @@
 title: مسفر
-description: مدونة شخصية
+description: 
 url: https://misfer.info
 lang: ar
 dir: rtl
 timezone: Asia/Riyadh
+posts: ممققااللااتت
+about: ععنن
 
 permalink: /:year/:month/:day/:title/
 
