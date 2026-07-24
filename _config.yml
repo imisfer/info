@@ -4,8 +4,8 @@ url: https://misfer.info
 lang: ar
 txt_dir: rtl
 timezone: Asia/Riyadh
-txt_posts: ممققااللااتت
-txt_about: ععنن
+txt_posts: مقالات
+txt_about: نبذة
 
 permalink: /:year/:month/:day/:title/
 
