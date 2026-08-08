@@ -15,7 +15,7 @@ permalink: /about/
 <p>نشأت في قرية "الدار"؛ وادعة وجميلة. تتوسط تخوم وادي "شرى" بين منطقتي الباحة وعسير.</p>
 
 <video style="width: 100%; height: 100%; border-radius: 15px;" autoplay loop muted width="1844" height="920">
-  <source src="https://misfer.info/hala/wp-content/uploads/shura.mov" type="video/quicktime" />
+  <source src="https://misfer.info/assets/img/shora.03.low.mov" type="video/quicktime" />
 </video>
 
 <p>مستفيدا من تعليم الدولة المجاني بالكامل، نلت بكالوريوس هندسة الكمبيوتر من الظهران. وبعدها بعشر سنوات، ماجستير في الإدارة الصحية للتنفيذيين. عشر سنين أخرى، ماجستير في إدارة التقنية.</p>
